@@ -46,6 +46,10 @@ var app = express();
 
 var gHosts;
 
+setInterval(function () {
+  gHosts = undefined;
+}, 1000 * 60 * 60 * 24); // 一天清空一次缓存
+
 app.get('/', function (req, res, next) {
   res.type('txt');
   if (gHosts) {
@@ -53,12 +57,15 @@ app.get('/', function (req, res, next) {
   }
 
   makeHosts(domains, function (err, content) {
+    if (err) {
+      return console.log('makeHosts err', err);
+    }
     gHosts = content;
     res.send(gHosts);
   });
 });
 
-var port = Number(process.env.PORT || 5000);
+var port = Number(process.env.PORT || 5001);
 app.listen(port, function () {
   console.log('listening on ' + port);
 });
