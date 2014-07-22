@@ -1,0 +1,32 @@
+{
+  "name": "alsohosts",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alsotang/alsohosts"
+  },
+  "keywords": [
+    "hosts",
+    "twitter",
+    "google"
+  ],
+  "author": "alsotang <alsotang@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alsotang/alsohosts/issues"
+  },
+  "homepage": "https://github.com/alsotang/alsohosts",
+  "dependencies": {
+    "async": "^0.9.0",
+    "eventproxy": "^0.3.1",
+    "express": "^4.6.1"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
