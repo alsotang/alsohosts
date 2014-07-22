@@ -1,4 +1,7 @@
 start:
 	./node_modules/.bin/nodemon app.js
 
-.PHONY: start
+test:
+	./node_modules/.bin/mocha test
+
+.PHONY: start test
