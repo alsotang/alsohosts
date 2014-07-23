@@ -5,11 +5,18 @@ var lib = require('./lib');
 
 var app = express();
 
-var gHosts;
+var gHosts; // hosts 的缓存
 
+// 一天更新一次缓存
 setInterval(function () {
-  gHosts = undefined;
-}, 1000 * 60 * 60 * 24); // 一天清空一次缓存
+  lib.makeHosts(domains, function (err, content) {
+    if (err) {
+      console.log('makeHosts err', err);
+      return;
+    }
+    gHosts = content;
+  });
+}, 1000 * 60 * 60 * 24);
 
 app.get('/', function (req, res, next) {
   res.type('txt');
