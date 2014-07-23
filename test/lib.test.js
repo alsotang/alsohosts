@@ -6,7 +6,7 @@ var domains = require('../domains.json');
 
 describe('test/lib.test.js', function () {
   before(function () {
-    mm(dns, 'lookup', function (ip, family, callback) {
+    mm(dns, 'lookup', function (domain, family, callback) {
       var rInt = ~~(Math.random() * 1000000);
       if (rInt % 2 === 0) {
         callback(null, 'im a ip');

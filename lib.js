@@ -8,7 +8,6 @@ function getIPs(domains, callback) {
     function (domain, callback) {
       dns.lookup(domain, 4, function (err, addr) {
         if (err) {
-          console.error('get ip err', err, domain);
           return callback(null, [domain, null]);
         }
         callback(null, [domain, addr]);
@@ -26,7 +25,7 @@ exports.getIPs = getIPs;
 
 // callback(err, content)
 function makeHosts(domains, callback) {
-  getIPs(domains, function (err, ips) {
+  exports.getIPs(domains, function (err, ips) {
     if (err) {
       return callback(err);
     }
