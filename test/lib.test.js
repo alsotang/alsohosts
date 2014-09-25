@@ -2,17 +2,19 @@ var should = require('should');
 var mm = require('mm');
 var lib = require('../lib');
 var dns = require('dns');
-var domains = require('../domains.json');
+var domains = require('../domains');
 
 describe('test/lib.test.js', function () {
   before(function () {
     mm(dns, 'lookup', function (domain, family, callback) {
-      var rInt = ~~(Math.random() * 1000000);
-      if (rInt % 2 === 0) {
-        callback(null, 'im a ip');
-      } else {
-        callback(new Error('domain not exists'));
-      }
+      setImmediate(function () {
+        var rInt = ~~(Math.random() * 1000000);
+        if (rInt % 2 === 0) {
+          callback(null, 'im a ip');
+        } else {
+          callback(new Error('domain not exists'));
+        }
+      });
     });
   });
   after(function () {

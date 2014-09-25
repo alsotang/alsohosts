@@ -1,6 +1,6 @@
 var express = require('express');
 
-var domains = require('./domains.json');
+var domains = require('./domains');
 var lib = require('./lib');
 
 var app = express();
