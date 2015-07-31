@@ -3,7 +3,7 @@ alsohosts
 
 [![Build Status](https://travis-ci.org/alsotang/alsohosts.svg?branch=master)](https://travis-ci.org/alsotang/alsohosts)
 
-项目演示：http://alsohosts.herokuapp.com/
+项目演示：http://alsohosts.herokuapp.com/ （有时候打开比较慢，因为 heroku 的 app 会自动睡眠）
 
 由于 huhamhire-hosts 和 Smarthosts 都很久没更新了，有些 host 地址比如 github 的已经过时了。
 
